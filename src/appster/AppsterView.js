@@ -460,7 +460,7 @@ export default class AppsterView {
      * may edit a list.
      */
     goToEditScreen(workToEdit) {
-        console.log("hi");
+        console.log("Go to Edit Screen");
         // THIS MIGHT HAVE OCCURED FROM HOME SO HIDE HOME
         this.showElementWithId(AppsterGUIId.APPSTER_HOME_SCREEN, false);
 

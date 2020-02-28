@@ -60,6 +60,10 @@ export default class GoLogoLoModel extends AppsterModel {
 
     updateEditSize()
     {
+        if(document.getElementById(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER).value == 0)
+        {
+            document.getElementById(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER).value = 1;
+        }
         this.getCurrentWork().setFontSize(document.getElementById(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER).value);
         console.log(this.getCurrentWork().getFontSize());
         this.view.updateText(this.getCurrentWork());

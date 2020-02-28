@@ -61,10 +61,22 @@ export default class AppsterModel {
                 return;
             }
         }
-        //at this point newname is valid and we append work
-        this.appendWork(this.createNewWork(newName));
-        this.view.hideTextInput();
-        return;
+
+        for (let j = 0; j < newName.length; j++)
+        {
+            if(newName.charAt(j) != " ")
+            {
+                //at this point newname is valid and we append work
+                var temp = this.createNewWork(newName);
+                this.prependWork(temp);
+                this.view.hideTextInput();
+                temp.getName();
+                this.editWork(newName);
+                return;
+            }
+        }
+        this.view.showChar();
+        return ;
     }
 
     editWork(workNameToEdit) {
